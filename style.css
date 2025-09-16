@@ -1,0 +1,376 @@
+/* Paleta de Cores */
+:root {
+    --black: #121212;
+    --yellow: #FFD700;
+    --dark-grey: #1f1f1f;
+    --white: #ffffff;
+}
+
+/* Base e Tipografia */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--black);
+    color: var(--white);
+    line-height: 1.6;
+}
+
+h1, h2, h3 {
+    font-weight: 600;
+    margin-bottom: 0.5em;
+    text-align: center;
+}
+
+h2 {
+    font-size: 2em;
+    color: var(--yellow);
+    margin-bottom: 1em;
+}
+
+a {
+    text-decoration: none;
+    color: var(--white);
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+/* Seções Gerais */
+.section {
+    padding: 3rem 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Header */
+.header {
+    background-color: var(--black);
+    padding: 1rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    border-bottom: 1px solid var(--dark-grey);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--yellow);
+}
+
+.menu-button {
+    background: none;
+    border: none;
+    color: var(--yellow);
+    font-size: 2rem;
+    cursor: pointer;
+    display: block; /* Visível em mobile */
+}
+
+.nav-menu {
+    display: none; /* Escondido por padrão */
+    position: absolute;
+    top: 60px;
+    left: 0;
+    width: 100%;
+    background-color: var(--black);
+    flex-direction: column;
+    text-align: center;
+    padding: 1rem 0;
+    border-top: 1px solid var(--dark-grey);
+}
+
+.nav-menu.active {
+    display: flex;
+}
+
+.nav-menu ul {
+    list-style: none;
+}
+
+.nav-menu li {
+    margin: 1rem 0;
+}
+
+/* Hero Section - Carousel */
+.hero-carousel {
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.carousel-item {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    opacity: 0;
+    transition: opacity 0.6s ease-in-out;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 1rem;
+}
+
+.carousel-item.active {
+    opacity: 1;
+}
+
+.carousel-item::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7); /* Overlay escuro */
+}
+
+.carousel-content {
+    position: relative;
+    z-index: 1;
+    color: var(--white);
+    max-width: 600px;
+}
+
+.carousel-content h1 {
+    font-size: 2.5em;
+    font-weight: 700;
+}
+
+.carousel-content p {
+    font-size: 1.1em;
+}
+
+.carousel-control {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(255, 255, 255, 0.2);
+    border: none;
+    color: var(--white);
+    font-size: 2rem;
+    padding: 0.5rem;
+    cursor: pointer;
+    z-index: 2;
+    transition: background 0.3s;
+}
+
+.carousel-control:hover {
+    background: rgba(255, 255, 255, 0.4);
+}
+
+.prev {
+    left: 1rem;
+}
+
+.next {
+    right: 1rem;
+}
+
+.carousel-dots {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 10px;
+    z-index: 2;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    background-color: rgba(255, 255, 255, 0.5);
+    border-radius: 50%;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+.dot.active {
+    background-color: var(--yellow);
+}
+
+/* Botões */
+.btn {
+    padding: 0.75rem 1.5rem;
+    border: none;
+    border-radius: 5px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+}
+
+.btn.primary {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+.btn.primary:hover {
+    background-color: #e6c800;
+    transform: translateY(-2px);
+}
+
+.group-buttons {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    margin-bottom: 2rem;
+}
+
+.filter-btn {
+    background: none;
+    border: 1px solid var(--yellow);
+    color: var(--yellow);
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background-color: var(--yellow);
+    color: var(--black);
+}
+
+/* Grids */
+.grid-aulas, .grid-planos {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    text-align: center;
+}
+
+/* Cards */
+.aula-card {
+    background-color: var(--dark-grey);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.aula-card img {
+    height: 200px;
+    object-fit: cover;
+    width: 100%;
+}
+
+.aula-card h3 {
+    margin-top: 1rem;
+    color: var(--yellow);
+}
+
+.aula-card p {
+    padding: 0 1rem 1rem;
+}
+
+.plano-card {
+    background-color: var(--dark-grey);
+    padding: 2rem;
+    border-radius: 10px;
+    border: 2px solid transparent;
+    transition: transform 0.3s, border-color 0.3s;
+}
+
+.plano-card:hover {
+    transform: translateY(-5px);
+    border-color: var(--yellow);
+}
+
+.plano-card.popular {
+    border-color: var(--yellow);
+    transform: scale(1.05);
+}
+
+.plano-card.popular .btn {
+    background-color: var(--yellow);
+}
+
+.plano-card .preco {
+    font-size: 2em;
+    font-weight: 700;
+    color: var(--yellow);
+}
+
+.plano-card .preco span {
+    font-size: 0.5em;
+    font-weight: 400;
+    color: var(--white);
+}
+
+.plano-card ul {
+    list-style: none;
+    text-align: left;
+    margin-top: 1rem;
+}
+
+.plano-card li {
+    margin-bottom: 0.5rem;
+    color: var(--white);
+}
+
+.plano-card li i {
+    color: var(--yellow);
+    margin-right: 0.5rem;
+}
+
+/* Rodapé (Footer) */
+.footer {
+    background-color: var(--dark-grey);
+    text-align: center;
+    padding: 2rem 1rem;
+}
+
+/* Media Queries para Responsividade */
+@media (min-width: 768px) {
+    .menu-button {
+        display: none;
+    }
+
+    .nav-menu {
+        display: flex;
+        position: static;
+        width: auto;
+        flex-direction: row;
+        background: none;
+        border-top: none;
+    }
+
+    .nav-menu ul {
+        display: flex;
+    }
+
+    .nav-menu li {
+        margin: 0 1rem;
+    }
+
+    .grid-aulas {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .grid-planos {
+        grid-template-columns: repeat(3, 1fr);
+    }
+}
+
+@media (min-width: 1024px) {
+    .grid-aulas {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}

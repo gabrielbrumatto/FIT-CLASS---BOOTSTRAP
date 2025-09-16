@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FIT CLASS - Sua melhor versão começa aqui</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header class="header">
+        <div class="logo">FIT CLASS</div>
+        <button class="menu-button" id="menu-button">☰</button>
+        <nav class="nav-menu" id="nav-menu">
+            <ul>
+                <li><a href="#home">Início</a></li>
+                <li><a href="#aulas">Aulas</a></li>
+                <li><a href="#planos">Planos</a></li>
+                <li><a href="#contato">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="hero-carousel" id="hero-carousel">
+            <div class="carousel-item active" style="background-image: url('https://images.unsplash.com/photo-1549060291-1dd94e2264c0?q=80&w=2070&auto=format&fit=crop');">
+                <div class="carousel-content">
+                    <h1>Treine como um profissional.</h1>
+                    <p>Equipamentos de ponta e instrutores qualificados para te levar ao próximo nível.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1550920422-96538d58c199?q=80&w=1935&auto=format&fit=crop');">
+                <div class="carousel-content">
+                    <h1>Encontre seu ritmo.</h1>
+                    <p>Aulas coletivas que te motivam a superar seus limites.</p>
+                </div>
+            </div>
+            <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1571019613454-1cb2fefb467e?q=80&w=2070&auto=format&fit=crop');">
+                <div class="carousel-content">
+                    <h1>Alcance seus objetivos.</h1>
+                    <p>O lugar perfeito para cuidar do seu corpo e mente.</p>
+                </div>
+            </div>
+            <button class="carousel-control prev" onclick="changeSlide(-1)">&#10094;</button>
+            <button class="carousel-control next" onclick="changeSlide(1)">&#10095;</button>
+            <div class="carousel-dots"></div>
+        </section>
+
+        <section class="section" id="aulas">
+            <h2>Nossas Aulas</h2>
+            <div class="group-buttons">
+                <button class="filter-btn active">Todos</button>
+                <button class="filter-btn">Cardio</button>
+                <button class="filter-btn">Força</button>
+                <button class="filter-btn">Flexibilidade</button>
+            </div>
+            <div class="grid-aulas">
+                <div class="aula-card">
+                    <img src="https://images.unsplash.com/photo-1599058917260-77a83d3b764b?q=80&w=2069&auto=format&fit=crop" alt="Yoga">
+                    <h3>Yoga</h3>
+                    <p>Aulas para fortalecer o corpo e a mente, promovendo equilíbrio e paz interior.</p>
+                </div>
+                <div class="aula-card">
+                    <img src="https://images.unsplash.com/photo-1547846506-613271f30745?q=80&w=1974&auto=format&fit=crop" alt="Musculação">
+                    <h3>Musculação</h3>
+                    <p>Desenvolva força e resistência com equipamentos modernos e treinos personalizados.</p>
+                </div>
+                <div class="aula-card">
+                    <img src="https://images.unsplash.com/photo-1552674609-b7b51e0693a1?q=80&w=2070&auto=format&fit=crop" alt="HIIT">
+                    <h3>HIIT</h3>
+                    <p>Treino intervalado de alta intensidade para queimar calorias e melhorar seu condicionamento.</p>
+                </div>
+                <div class="aula-card">
+                    <img src="https://images.unsplash.com/photo-1601614741369-026607062400?q=80&w=1935&auto=format&fit=crop" alt="Pilates">
+                    <h3>Pilates</h3>
+                    <p>Melhore a postura e a flexibilidade com exercícios que fortalecem o core e o corpo inteiro.</p>
+                </div>
+            </div>
+        </section>
+
+        <section class="section" id="planos">
+            <h2>Escolha seu Plano</h2>
+            <div class="grid-planos">
+                <div class="plano-card">
+                    <h3>Plano Mensal</h3>
+                    <p class="preco">R$ 99,90<span>/mês</span></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acesso total aos equipamentos</li>
+                        <li><i class="fas fa-check"></i> 1 aula experimental gratuita</li>
+                        <li><i class="fas fa-times"></i> Sem acesso a aulas coletivas</li>
+                    </ul>
+                    <button class="btn primary">Assinar</button>
+                </div>
+                <div class="plano-card popular">
+                    <h3>Plano Anual</h3>
+                    <p class="preco">R$ 89,90<span>/mês</span></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acesso total aos equipamentos</li>
+                        <li><i class="fas fa-check"></i> Todas as aulas coletivas</li>
+                        <li><i class="fas fa-check"></i> Avaliação física trimestral</li>
+                    </ul>
+                    <button class="btn primary">Assinar Agora</button>
+                </div>
+                <div class="plano-card">
+                    <h3>Plano Flex</h3>
+                    <p class="preco">R$ 15,00<span>/dia</span></p>
+                    <ul>
+                        <li><i class="fas fa-check"></i> Acesso diário</li>
+                        <li><i class="fas fa-times"></i> Sem aulas coletivas</li>
+                        <li><i class="fas fa-times"></i> Sem avaliação física</li>
+                    </ul>
+                    <button class="btn primary">Comprar</button>
+                </div>
+            </div>
+        </section>
+
+        <footer class="footer" id="contato">
+            <p>&copy; 2025 FIT CLASS. Todos os direitos reservados.</p>
+            <p>Contato: (11) 98765-4321 | email@fitclass.com</p>
+        </footer>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
